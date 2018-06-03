@@ -6,14 +6,16 @@ local cgiluahandler = require "xavante.cgiluahandler"
 local redirect = require "xavante.redirecthandler"
 
 --local datafile = require("luarocks_gui.gui1")
+--local datafile = require("datafile")
 
 function gui1.command()
     --local s = assert(datafile.path("gui1/0.0.1-1/pages/index.lp", "r"))
+    --local s = assert(datafile.path("pages/index.lp", "r"))
 
     print("ayy lmao gui")
 
     -- Define here where Xavante HTTP documents scripts are located
-    local webDir = "."
+    local webDir = "pages"
 
 
     local simplerules = {
@@ -21,7 +23,7 @@ function gui1.command()
         { -- URI remapping example
             match = "^[^%./]*/$",
             with = redirect,
-            params = {"pages/index.lp"}
+            params = {"index.lp"}
           }, 
 
         { -- cgiluahandler example
