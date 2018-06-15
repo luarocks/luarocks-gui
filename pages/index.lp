@@ -1,59 +1,121 @@
 
 <head>
-	<title>LuaRocks GUI</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-
-	<style>
-		.list-item {
-		margin: 1em;
-		}
-	</style>
-
+  <title>LuaRocks GUI</title>
+  <!-- styles and fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+  <!-- styles and fonts end -->
 </head>
 
 <body>
-
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="index.lp">LuaRocks</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="list.lp">List</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Search</a>
-        </li>
-      </ul>
+  <!-- navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-active" href="index.lp"><img src="luarocks_logo_only.png"><strong>LuaRocks</strong></a>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar">
+          <a class="navbar-item">List rocks</a>
+          <a class="navbar-item">Search rocks</a>
+          <a class="navbar-item">Advanced</a>
+        </div>
+        <div class="navbar-end">
+          <a class="navbar-item">About</a>
+          <a class="navbar-item">Help</a>
+        </div>
+      </div>
     </div>
   </nav>
+  <!-- navbar end -->
 
-  <div class="container" style="margin-top:30px">
-    
-    <div class="row">
-      <div class="list-item col-sm-10 offset-1">
-        <h2>main page:</h2>
+  <!-- page header -->
+  <div class="main-header">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <div class="columns is-vcentered">
+            <div class="column is-3 is-offset-3 has-text-centered">
+            <img src="https://upload-images.jianshu.io/upload_images/741742-960f8b55139d5cfc.png">
+            </div>
+            <div class="column is-4 has-text-left">
+            <h1 class="title is-1">LuaRocks<br>GUI</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <!-- page header end -->
+
+  <!-- main page content -->
+  <div class="main-content">
+    <div class="container">
+      <div class="columns">
+        <div class=" box columns column is-multiline is-12">
+          <!-- box header -->
+          <div class="box-header column is-12">
+            <h4 class="title is-4">List of rock-trees:</h4>
+          </div>
+          <!-- box header end -->
+          <!-- list of rock-trees -->
+          
+          <div class="box-content columns column is-8 is-offset-2 is-vcentered">
+            <div class="box-content-text has-text-right column is-6">
+              <p>Rock-tree name</p>
+              <p>Rock-tree location</p>
+            </div>
+            <div class="has-text column is-6">
+              <a class="button" id="select">Select</a>
+            </div>
+          </div>
+
+          <div class="box-content columns column is-8 is-offset-2 is-vcentered">
+            <div class="box-content-text has-text-right column is-6">
+              <p>Rock-tree name</p>
+              <p>Rock-tree location</p>
+            </div>
+            <div class="has-text column is-6">
+              <a class="button" id="select">Select</a>
+            </div>
+          </div>
+          
+          <div class="box-content columns column is-8 is-offset-2 is-vcentered">
+            <div class="box-content-text has-text-right column is-6">
+              <p>Rock-tree name</p>
+              <p>Rock-tree location</p>
+            </div>
+            <div class="has-text column is-6">
+              <a class="button" id="select">Select</a>
+            </div>
+          </div>
+          
+          <div class="box-content columns column is-8 is-offset-2 is-vcentered">
+            <div class="box-content-text has-text-right column is-6">
+              <p>Rock-tree name</p>
+              <p>Rock-tree location</p>
+            </div>
+            <div class="has-text column is-6">
+              <a class="button" id="select">Select</a>
+            </div>
+          </div>
+
+          <!-- list of rock-trees end -->
+        </div>
       </div>
     </div>
+  </div>
+  <!-- main page content end -->
 
-    <div class="row">
-      <div class="list-item col-sm-10 offset-1">
-        <h4>Here we will probably have some info about LuaRocks</h4>
-        <h4>mainly:</h4>
-        <p> version, current rocktree, etc.</p>
+  <!-- footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="has-text-centered">
+        <p>do we even need a footer?</p>
+        <a href="https://luarocks.org">LuaRocks website</a>
       </div>
     </div>
-
-    
   </div>
-
-  <div class="jumbotron text-center">
-    <p>Footer</p>
-  </div>
-
+  <!-- footer end -->
 </body>
