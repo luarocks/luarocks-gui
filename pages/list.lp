@@ -52,15 +52,29 @@
         <div class="column is-12">
 
 
-
-
            <?lua
+
+          list_of_rocks = nil
+          lr = nil
+          collectgarbage()
+
+
           local lr = require "luarocks"
-          list_of_rocks = lr.list()
+
+          --local pl = require "pl.pretty"
+          --print(pl.write(lr.list()))
+
+
+          --print(io.open("list.lp", "a"))
+          file = io.open("list.lp", "a")
+          file:write("e")
+
+          local list_of_rocks = lr.list()
           count_of_rocks = 0
           for i, data_table in ipairs(list_of_rocks) do
+          --list_of_rocks = lr.list()
           if count_of_rocks >5 then break end
-          show = lr.show(data_table[1])
+          local show = lr.show(data_table[1])
           homepage, doc_dir, files = lr.doc(data_table[1])
           count_of_rocks = count_of_rocks + 1
           ?>
@@ -80,7 +94,12 @@
                 <div class="has-text">
                   <a class="button" id="details" v-on:click="is_active = !is_active">Details</a>
                   <a class="button" id="docs">Documentation</a>
-                  <a class="button" id="remove" v-on:click="remove_rock ('<lua? data_table[1] ?>')" href="list.lp">Remove</a>
+                  <!--<a class="button" id="remove" v-on:click="remove_rock ('<lua data_table[1] ?>')" href="list.lp">Remove</a>-->
+
+                  <form action="remove.lp" method="post">
+                  <button class="button" id="remove" type="submit" name="rock_name" value="<?lua= data_table[1] ?>" >Remove</button>
+                  </form>
+
                 </div>
                 <div class="box-content-text" v-show="is_active">
                   <p> <?lua if show["detailed"] then print(show["detailed"]) end ?> </p>
@@ -127,7 +146,8 @@ for (x = 1; x <= <?lua= count_of_rocks ?> ; x++) {
   methods: {
     remove_rock : function (rock_name) {
       // call lua
-      <?lua lr.remove(" ?> rock_name; <?lua ") ?>
+      <?lua print("wouw") ?>
+      <?lua print(" ?> rock_name; <?lua ") ?>
       console.log(rock_name);
     }
   }
@@ -135,3 +155,9 @@ for (x = 1; x <= <?lua= count_of_rocks ?> ; x++) {
 }
 </script>
 
+<?lua
+list_of_rocks = nil
+lr = nil
+collectgarbage()
+?>
+hhheeeeee
