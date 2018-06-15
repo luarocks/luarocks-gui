@@ -1,0 +1,71 @@
+/* basic formatting changes */
+body {
+    font-family: 'Fira Sans', sans-serif;
+    background-color: ;
+}
+.main-content {
+    padding-top: 0.5rem;
+    padding-bottom: 2rem;
+}
+a {
+    color: #2c4067;
+}
+
+/* navigation formatting */
+.navbar {
+    background-color: #2c4067;
+    padding: 0.5em;
+}
+.navbar-brand {
+    font-size: 1.5em;
+}
+a.navbar-item.is-active {
+    color: whitesmoke;
+    font-weight: 900;
+    border-bottom: 0.5px solid white;
+}
+a.navbar-item {
+    color: white;
+}
+a.navbar-item:hover {
+    background-color: #2c4067;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+}
+a.navbar-item img {
+   -webkit-filter: brightness(0) invert(1);
+}
+
+/* button formatting */
+.button:focus {
+    border-color: #2c4067;
+}
+.button:hover {
+    transition: 0.2s ease;
+    border-color: white;
+    background-color: #2c4067;
+    color: white;
+}
+#remove:hover {
+    background-color: #5a0909;
+}
+
+/* labelling formatting */
+.title .labels a {
+    font-size: 0.7em;
+}
+
+/* page header formatting */
+.main-header .title {
+    font-size: 4.5em;
+}
+
+/* box formatting */
+.box-content-text {
+    padding: 1.5em 0em 1.5em 0em;
+}
+.box-header {
+    padding: 20px 0 0 20px;
+}
+
+
