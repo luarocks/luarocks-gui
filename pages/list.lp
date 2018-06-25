@@ -14,13 +14,13 @@
   <nav class="navbar">
     <div class="container">
       <div class="navbar-brand">
-        <a class="navbar-item" href="../"><img src="luarocks_logo_only.png"><strong>LuaRocks</strong></a>
+        <a class="navbar-item" href="index.lp"><img src="luarocks_logo_only.png"><strong>LuaRocks</strong></a>
       </div>
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar">
           <a class="navbar-item is-active">List rocks</a>
-          <a class="navbar-item">Search rocks</a>
-          <a class="navbar-item">Advanced</a>
+          <a class="navbar-item" href="search.lp">Search rocks</a>
+          <a class="navbar-item" href="advanced.lp">Advanced</a>
         </div>
         <div class="navbar-end">
           <a class="navbar-item">About</a>
@@ -91,14 +91,17 @@
               <!-- box header end -->
               <!-- box content -->
               <div class="box-content">
-                <div class="has-text">
-                  <a class="button" id="details" v-on:click="is_active = !is_active">Details</a>
-                  <a class="button" id="docs">Documentation</a>
-                  <!--<a class="button" id="remove" v-on:click="remove_rock ('<lua data_table[1] ?>')" href="list.lp">Remove</a>-->
-
-                  <form action="remove.lp" method="post">
-                  <button class="button" id="remove" type="submit" name="rock_name" value="<?lua= data_table[1] ?>" >Remove</button>
-                  </form>
+                <div class="has-text columns">
+                  <div class="column is-10">
+                    <a class="button" id="details" v-on:click="is_active = !is_active">Details</a>
+                    <a class="button" id="docs">Documentation</a>
+                    <!--<a class="button" id="remove" v-on:click="remove_rock ('<lua data_table[1] ?>')" href="list.lp">Remove</a>-->
+                  </div>
+                  <div class="column is-2">
+                    <form action="remove.lp" method="post">
+                      <button class="button" id="remove" type="submit" name="rock_name" value="<?lua= data_table[1] ?>" >Remove</button>
+                    </form>
+                  </div>
 
                 </div>
                 <div class="box-content-text" v-show="is_active">
@@ -160,4 +163,4 @@ list_of_rocks = nil
 lr = nil
 collectgarbage()
 ?>
-hhheeeeee
+hhheeeeeeeeeeeeeeeeeeeeeeeeeee

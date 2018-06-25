@@ -17,9 +17,9 @@
       </div>
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar">
-          <a class="navbar-item">List rocks</a>
-          <a class="navbar-item">Search rocks</a>
-          <a class="navbar-item">Advanced</a>
+          <a class="navbar-item" href="list.lp">List rocks</a>
+          <a class="navbar-item" href="search.lp">Search rocks</a>
+          <a class="navbar-item" href="advanced.lp">Advanced</a>
         </div>
         <div class="navbar-end">
           <a class="navbar-item">About</a>
