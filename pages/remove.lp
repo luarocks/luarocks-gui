@@ -18,7 +18,7 @@ file:write("h")
 
 ?>
 <head>
-<!--<meta http-equiv="Refresh" content="10; url=list.lp">-->
+<meta http-equiv="Refresh" content="1; url=list.lp">
 </head>
 
 <body>
@@ -26,10 +26,10 @@ file:write("h")
 <p> <?lua print(cgilua.POST.rock_name) ?>  is removed!  </p>
 
 <form action="list.lp" method="get">
-<button class="button" type="submit" name="rock_name" value="wow" >Go back, nibba</button>
+<button class="button" type="submit" name="rock_name" value="wow" >ok</button>
 </form>
 
 </body>
 
 </html>
-eeeeeeeeh
+eeeeeeeehhh
