@@ -3,19 +3,7 @@
 
 <?lua 
 local lr = require("luarocks")
-lr.remove(cgilua.POST.rock_name)
-
---local pl = require "pl.pretty"
---print(pl.write(lr.list()))
-?>
-
-
-<?lua 
-
-print(io.open("remove.lp", "a"))
-file = io.open("remove.lp", "a")
-file:write("h")
-
+lr.remove(cgilua.POST.rock_name, cgilua.POST.version)
 ?>
 <head>
 <meta http-equiv="Refresh" content="1; url=list.lp">
@@ -23,7 +11,7 @@ file:write("h")
 
 <body>
 
-<p> <?lua print(cgilua.POST.rock_name) ?>  is removed!  </p>
+<p> <?lua print(cgilua.POST.rock_name..": "..cgilua.POST.version) ?>  is removed!  </p>
 
 <form action="list.lp" method="get">
 <button class="button" type="submit" name="rock_name" value="wow" >ok</button>
@@ -32,4 +20,3 @@ file:write("h")
 </body>
 
 </html>
-eeeeeeeehhh

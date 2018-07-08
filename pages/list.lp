@@ -73,7 +73,7 @@
           count_of_rocks = 0
           for i, data_table in ipairs(list_of_rocks) do
           --list_of_rocks = lr.list()
-          if count_of_rocks >5 then break end
+          if count_of_rocks >6 then break end
           local show = lr.show(data_table[1])
           homepage, doc_dir, files = lr.doc(data_table[1])
           count_of_rocks = count_of_rocks + 1
@@ -104,6 +104,7 @@
                   </div>
                   <div class="column is-2">
                     <form action="remove.lp" method="post">
+                      <input style="display:none;" name="version" id="version" value="<?lua= data_table[2] ?>">
                       <button class="button" id="remove" type="submit" name="rock_name" value="<?lua= data_table[1] ?>" >Remove</button>
                     </form>
                   </div>
@@ -168,4 +169,4 @@ list_of_rocks = nil
 lr = nil
 collectgarbage()
 ?>
-hhheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+hhheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
