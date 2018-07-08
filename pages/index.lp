@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <head>
   <title>LuaRocks GUI</title>
   <!-- styles and fonts -->
@@ -60,46 +60,27 @@
           </div>
           <!-- box header end -->
           <!-- list of rock-trees -->
+
+          <?lua
+          local lr = require "luarocks"
+          list_of_rock_trees = lr.list_rock_trees()
+
+          for i, tree in ipairs(list_of_rock_trees) do
+          ?>
           
           <div class="box-content columns column is-8 is-offset-2 is-vcentered">
             <div class="box-content-text has-text-right column is-6">
-              <p>Rock-tree name</p>
-              <p>Rock-tree location</p>
+              <p> <strong> <?lua print(tree["name"]) ?> </strong> </p>
+              <p> <?lua print(tree["root"]) ?> </p>
             </div>
             <div class="has-text column is-6">
               <a class="button" id="select">Select</a>
             </div>
           </div>
 
-          <div class="box-content columns column is-8 is-offset-2 is-vcentered">
-            <div class="box-content-text has-text-right column is-6">
-              <p>Rock-tree name</p>
-              <p>Rock-tree location</p>
-            </div>
-            <div class="has-text column is-6">
-              <a class="button" id="select">Select</a>
-            </div>
-          </div>
-          
-          <div class="box-content columns column is-8 is-offset-2 is-vcentered">
-            <div class="box-content-text has-text-right column is-6">
-              <p>Rock-tree name</p>
-              <p>Rock-tree location</p>
-            </div>
-            <div class="has-text column is-6">
-              <a class="button" id="select">Select</a>
-            </div>
-          </div>
-          
-          <div class="box-content columns column is-8 is-offset-2 is-vcentered">
-            <div class="box-content-text has-text-right column is-6">
-              <p>Rock-tree name</p>
-              <p>Rock-tree location</p>
-            </div>
-            <div class="has-text column is-6">
-              <a class="button" id="select">Select</a>
-            </div>
-          </div>
+          <?lua
+          end
+          ?>
 
           <!-- list of rock-trees end -->
         </div>
