@@ -73,12 +73,10 @@
           if cgilua.POST.query then
             sc = lr.search(cgilua.POST.query)
           else
-          print("boooo")
-            sc = lr.search("datafile")
+            sc = lr.search("test rock")
           end
 
           for item, item_versions in pairs(sc.sources) do
-            --print(item)
           ?>
 
           <!-- list item -->
