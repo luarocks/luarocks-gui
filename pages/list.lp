@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <head>
   <title>LuaRocks GUI</title>
   <!-- styles and fonts -->
@@ -23,8 +24,8 @@
           <a class="navbar-item" href="advanced.lp">Advanced</a>
         </div>
         <div class="navbar-end">
-          <a class="navbar-item">About</a>
-          <a class="navbar-item">Help</a>
+          <a class="navbar-item" href="about.lp">About</a>
+          <a class="navbar-item" href="help.lp">Help</a>
         </div>
       </div>
     </div>
@@ -169,4 +170,3 @@ list_of_rocks = nil
 lr = nil
 collectgarbage()
 ?>
-hhheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee

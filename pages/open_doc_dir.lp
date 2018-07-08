@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <?lua
@@ -8,3 +9,4 @@ os.execute('xdg-open "$HOME/../..'..cgilua.POST.doc_dir..'"')
 <body onLoad="loaded()">
 Opening the directory <?lua print(cgilua.POST.doc_dir) ?>...
 </body>
+</html>
