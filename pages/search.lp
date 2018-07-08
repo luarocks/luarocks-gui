@@ -53,70 +53,106 @@
 
           <!-- search bar -->
           <div class="search-bar box column is-12">
-            <div class="field has-addons">
-              <div class="control is-expanded">
-                <input class="input has-text-centered" type="search" placeholder="rock name to search">
+            <form action="search.lp" method="post">
+              <div class="field has-addons">
+                <div class="control is-expanded">
+                  <input class="input has-text-centered" type="search" placeholder="rock name to search" name="query">
+                </div>
+                <div class="control">
+                  <button class="button" id="search" type="submit" name="search" value="submit" >search</button>
+                </div>
               </div>
-              <div class="control">
-                <a class="button">Search</a>
-              </div>
-            </div>
+            </form>
           </div>
           <!-- search bar end -->
 
+          <?lua
+          local lr = require("luarocks")
+
+          
+          if cgilua.POST.query then
+            sc = lr.search(cgilua.POST.query)
+          else
+          print("boooo")
+            sc = lr.search("datafile")
+          end
+
+          for item, item_versions in pairs(sc.sources) do
+            --print(item)
+          ?>
+
           <!-- list item -->
           <div class="box" id="vue-app">
             <!-- box header -->
-            <div class="box-header">
-              <h4 class="title is-4">Name of rock</h4>
-              <small>some details</small>
+            <div class="box-header columns">
+              <div class="column is-2">
+                <h4 class="title is-4"><?lua print(item) ?></h4>
+              </div>
+              <div class="column is-2">
+                <a class="button" id="view_on" target="_blank" href="https://luarocks.org/search?q=<?lua= item ?>">View on luaRocks.org</a>
+              </div>
             </div>
             <!-- box header end -->
             <!-- box content -->
             <div class="box-content">
-              <div class="box-content-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla tortor, congue a venenatis at, ornare eu dui. Mauris vehicula malesuada nisl, at tristique nibh pretium vitae. Donec mattis, neque et auctor condimentum, libero mauris.</p>
-              </div>
-              <div class="has-text">
-                <a class="button" id="details" v-on:click="is_active = !is_active">Details</a>
-                <a class="button" id="docs">Documentation</a>
-                <a class="button" id="view_on">View on luaRocks.org</a>
-                <a class="button" id="install">Install</a>
-              </div>
-              <div class="box-content-text" v-show="is_active">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla tortor, congue a venenatis at, ornare eu dui. Mauris vehicula malesuada nisl, at tristique nibh pretium vitae. Donec mattis, neque et auctor condimentum, libero mauris</p>
-              </div>
+                <!-- version select form -->
+                <form action="install.lp" method="post">
+                  <div class="has-text form">
+                  
+                    <div class="field is-horizontal">
+                      <div class="field-label">
+                        <label class="label">Select version:</label>
+                      </div>
+                      <div class="field-body">
+                        <div class="field is-narrow">
+                          <div class="control">
+                            <div class="select">
+                              <select name="version">
+                                <option>Select</option>
+
+                                <?lua
+                                for version,_ in pairs(item_versions) do
+                                ?>
+                                
+                                <option> <?lua print(version) ?> </option>
+
+                                <?lua
+                                end
+                                ?>
+
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                      <div class="field-label">
+                        <!-- Left empty for spacing -->
+                      </div>
+                      <div class="field-body">
+                        <div class="field">
+                          <div class="control">
+                            <button class="button" id="install" type="submit" name="rock_name" value="<?lua= item ?>" >Install</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    
+      
+                  </div>
+                </form>
+                <!-- version select form end -->
             </div>
             <!-- box content end -->
           </div>
           <!-- list item end -->
 
-          <!-- list item -->
-          <div class="box" id="vue-app">
-            <!-- box header -->
-            <div class="box-header">
-              <h4 class="title is-4">Name of rock</h4>
-              <small>some details</small>
-            </div>
-            <!-- box header end -->
-            <!-- box content -->
-            <div class="box-content">
-              <div class="box-content-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla tortor, congue a venenatis at, ornare eu dui. Mauris vehicula malesuada nisl, at tristique nibh pretium vitae. Donec mattis, neque et auctor condimentum, libero mauris.</p>
-              </div>
-              <div class="has-text">
-                <a class="button" id="details" v-on:click="is_active = !is_active">Details</a>
-                <a class="button" id="docs">Documentation</a>
-                <a class="button" id="view_on">View on luaRocks.org</a>
-                <a class="button" id="install">Install</a>
-              </div>
-              <div class="box-content-text" v-show="is_active">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla tortor, congue a venenatis at, ornare eu dui. Mauris vehicula malesuada nisl, at tristique nibh pretium vitae. Donec mattis, neque et auctor condimentum, libero mauris</p>
-              </div>
-            </div>
-            <!-- box content end -->
-          </div>
-          <!-- list item end -->
+          <?lua
+          end
+          ?>
 
         </div>
 
