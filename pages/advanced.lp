@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
   <link rel="stylesheet" href="list.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <!-- styles and fonts end -->
 </head>
 
@@ -62,26 +63,53 @@
               <div class="box-content-text">
                 <h5 class="title is-5">Existing rockspec</h5>
               </div>
-              <div class="file has-name">
-                <label class="file-label">
-                  <input class="file-input" type="file" name="resume">
-                  <span class="file-cta">
-                    <span class="file-icon">
-                      <i class="fa fa-upload"></i>
-                    </span>
-                    <span class="file-label">
-                      Choose a rockspec
-                    </span>
-                  </span>
-                  <span class="file-name">
-                    example.rockpec
-                  </span>
-                </label>
-              </div>
-              <div class="has-text">
-                <a class="button" id="remove">lint</a>
-                <a class="button" id="new_version">new version</a>
-              </div>
+
+              <form action="lint_and_new_version.lp" method="post">
+
+                <div class="has-text form column is-12">
+
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">rockspec path</label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <p class="control is-expanded">
+                          <input class="input" type="text" name="rockspec_name" placeholder="eg. example-0.0.0-1.rockspec || currently works only in the same directory">
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <!-- Left empty for spacing -->
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <button class="button" id="lint" type="submit" name="action" value="lint" >lint</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <!-- Left empty for spacing -->
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <button class="button" id="new_version" type="submit" name="action" value="new_version" >new_version</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </form>
+
             </div>
             
             <div class="box box-content">
@@ -318,3 +346,14 @@
   </div>
   <!-- footer end -->
 </body>
+
+<!--
+<script>
+new Vue({
+  el: '#vue-app',
+  data: {
+    selected_file: ""
+  }
+})
+</script>
+-->
