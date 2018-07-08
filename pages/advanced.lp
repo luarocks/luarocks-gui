@@ -305,32 +305,6 @@
           </div>
           <!-- list item end -->
 
-          <!-- list item -->
-          <div class="box" id="vue-app">
-            <!-- box header -->
-            <div class="box-header">
-              <h4 class="title is-4">Name of rock</h4>
-              <small>some details</small>
-            </div>
-            <!-- box header end -->
-            <!-- box content -->
-            <div class="box-content">
-              <div class="box-content-text">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla tortor, congue a venenatis at, ornare eu dui. Mauris vehicula malesuada nisl, at tristique nibh pretium vitae. Donec mattis, neque et auctor condimentum, libero mauris.</p>
-              </div>
-              <div class="has-text">
-                <a class="button" id="details" v-on:click="is_active = !is_active">Details</a>
-                <a class="button" id="docs">Documentation</a>
-                <a class="button" id="remove">Remove</a>
-              </div>
-              <div class="box-content-text" v-show="is_active">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nulla tortor, congue a venenatis at, ornare eu dui. Mauris vehicula malesuada nisl, at tristique nibh pretium vitae. Donec mattis, neque et auctor condimentum, libero mauris</p>
-              </div>
-            </div>
-            <!-- box content end -->
-          </div>
-          <!-- list item end -->
-
         </div>
 
       </div>
@@ -350,14 +324,3 @@
   </div>
   <!-- footer end -->
 </body>
-
-<!--
-<script>
-new Vue({
-  el: '#vue-app',
-  data: {
-    selected_file: ""
-  }
-})
-</script>
--->
