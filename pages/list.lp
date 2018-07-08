@@ -92,10 +92,15 @@
               <!-- box content -->
               <div class="box-content">
                 <div class="has-text columns">
-                  <div class="column is-10">
+                  <div class="column is-1">
                     <a class="button" id="details" v-on:click="is_active = !is_active">Details</a>
-                    <a class="button" id="docs">Documentation</a>
+                    <!--<a class="button" id="docs">Documentation</a>-->
                     <!--<a class="button" id="remove" v-on:click="remove_rock ('<lua data_table[1] ?>')" href="list.lp">Remove</a>-->
+                  </div>
+                  <div class="column is-8">
+                    <form action="open_doc_dir.lp" method="post">
+                      <button class="button" id="docs" type="submit" name="doc_dir" value="<?lua= doc_dir ?>" >Documentation</button>
+                    </form>
                   </div>
                   <div class="column is-2">
                     <form action="remove.lp" method="post">
@@ -163,4 +168,4 @@ list_of_rocks = nil
 lr = nil
 collectgarbage()
 ?>
-hhheeeeeeeeeeeeeeeeeeeeeeeeeee
+hhheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
