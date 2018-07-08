@@ -64,7 +64,7 @@
                 <h5 class="title is-5">Existing rockspec</h5>
               </div>
 
-              <form action="lint_and_new_version.lp" method="post">
+              <form action="lint_and_new_version.lp" method="get">
 
                 <div class="has-text form column is-12">
 
@@ -118,180 +118,184 @@
               </div>
               
               <!-- rockspec form -->
-              <div class="has-text form">
-                
-                
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">Name (rock)</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="eg. rock_name">
-                      </p>
+              <form action="new_rockspec.lp" method="post">
+                <div class="has-text form">
+                  
+                  
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Name (rock)</label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <p class="control is-expanded">
+                          <input class="input" type="text" placeholder="eg. rock_name" name="name">
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">Location</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <div class="control">
-                        <input class="input is-danger" type="text" placeholder="eg. home/user/example.rockspec">
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Location</label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <input class="input is-danger" type="text" placeholder="eg. home/user/example.rockspec" name="location">
+                        </div>
+                        <!--
+                        <p class="help is-danger">
+                          This field is required
+                        </p>
+                        -->
                       </div>
-                      <p class="help is-danger">
-                        This field is required
-                      </p>
                     </div>
                   </div>
-                </div>
-                
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">output file</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="eg. example.rockspec">
-                      </p>
+                  
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">output file</label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <p class="control is-expanded">
+                          <input class="input" type="text" placeholder="eg. example.rockspec" name="output">
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">License</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="eg. MIT">
-                      </p>
+                  
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">License</label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <p class="control is-expanded">
+                          <input class="input" type="text" placeholder="eg. MIT" name="license">
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">Summary</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <div class="control">
-                        <textarea class="textarea" placeholder=""></textarea>
-                      </div>
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Summary</label>
                     </div>
-                  </div>
-                </div>
-                
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">Detailed description</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <div class="control">
-                        <textarea class="textarea" placeholder=""></textarea>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">Homepage</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="eg. example.com">
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="field is-horizontal">
-                  <div class="field-label">
-                    <label class="label">Lua versions supported</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field is-narrow">
-                      <div class="control">
-                        <label class="checkbox">
-                          <input type="checkbox" name="member">
-                          5.1
-                        </label>
-                        <label class="checkbox">
-                          <input type="checkbox" name="member">
-                          5.2
-                        </label>
-                        <label class="checkbox">
-                          <input type="checkbox" name="member">
-                          5.3
-                        </label>
-                        <label class="checkbox">
-                          <input type="checkbox" name="member">
-                          5.4
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="field is-horizontal">
-                  <div class="field-label">
-                    <label class="label">Rockspec format</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field is-narrow">
-                      <div class="control">
-                        <div class="select">
-                          <select>
-                            <option>Select</option>
-                            <option>1.0</option>
-                            <option>2.0</option>
-                            <option>3.0</option>
-                          </select>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <textarea class="textarea" placeholder="" name="summary"></textarea>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                
-                <div class="field is-horizontal">
-                  <div class="field-label is-normal">
-                    <label class="label">C libraries</label>
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <p class="control is-expanded">
-                        <input class="input" type="text" placeholder="A comma-separated list of libraries that C files need to link to.">
-                      </p>
+                  
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Detailed description</label>
                     </div>
-                  </div>
-                </div>
-
-                <div class="field is-horizontal">
-                  <div class="field-label">
-                    <!-- Left empty for spacing -->
-                  </div>
-                  <div class="field-body">
-                    <div class="field">
-                      <div class="control">
-                        <button class="button">
-                          Create rockspec
-                        </button>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <textarea class="textarea" placeholder="" name="description"></textarea>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">Homepage</label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <p class="control is-expanded">
+                          <input class="input" type="text" placeholder="eg. example.com" name="homepage">
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <label class="label">Lua versions supported</label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field is-narrow">
+                        <div class="control">
+                          <label class="checkbox">
+                            <input type="checkbox" name="luaver_5_1">
+                            5.1
+                          </label>
+                          <label class="checkbox">
+                            <input type="checkbox" name="luaver_5_2">
+                            5.2
+                          </label>
+                          <label class="checkbox">
+                            <input type="checkbox" name="luaver_5_3">
+                            5.3
+                          </label>
+                          <label class="checkbox">
+                            <input type="checkbox" name="luaver_5_4">
+                            5.4
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <label class="label">Rockspec format</label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field is-narrow">
+                        <div class="control">
+                          <div class="select">
+                            <select name="rockspec_format">
+                              <option>Select</option>
+                              <option>1.0</option>
+                              <option>2.0</option>
+                              <option>3.0</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="field is-horizontal">
+                    <div class="field-label is-normal">
+                      <label class="label">C libraries</label>
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <p class="control is-expanded">
+                          <input class="input" type="text" placeholder="A comma-separated list of libraries that C files need to link to." name="c_libraries">
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="field is-horizontal">
+                    <div class="field-label">
+                      <!-- Left empty for spacing -->
+                    </div>
+                    <div class="field-body">
+                      <div class="field">
+                        <div class="control">
+                          <button class="button">
+                            Create rockspec
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
                 </div>
-                
-              </div>
+              </form>
               <!-- rockspec form end -->
               
               
