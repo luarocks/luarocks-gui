@@ -3,6 +3,7 @@
   <title>LuaRocks GUI</title>
   <!-- styles and fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
+  <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="list.css">
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -171,4 +172,4 @@ for (x = 1; x-1 <= <?lua= count_of_rocks ?> ; x++) {
 list_of_rocks = nil
 lr = nil
 collectgarbage()
-?>eeeeeeeee
+?>eeeeeeeeeeeeeeeeeeeeeeeeeee

@@ -4,6 +4,7 @@
   <!-- styles and fonts -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="index.css">
   <!-- styles and fonts end -->
 </head>
