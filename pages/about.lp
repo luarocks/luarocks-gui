@@ -37,7 +37,7 @@
         <div class="container">
           <div class="columns is-vcentered">
             <div class="column is-3 is-offset-3 has-text-centered">
-            <img src="https://upload-images.jianshu.io/upload_images/741742-960f8b55139d5cfc.png">
+            <img src="luarocks_logo_color.png">
             </div>
             <div class="column is-4 has-text-left">
             <h1 class="title is-1">LuaRocks<br>GUI</h1>
