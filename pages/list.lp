@@ -53,16 +53,67 @@
       <div class="columns is-multiline">
         <div class="column is-12">
 
+          <div class="box">
+            <form action="list.lp" method="post">
+              <div class="columns is-multiline">
+
+                <div class="field is-vcentered columns column is-4">
+                  <div class="field-label column is-6">
+                    <label class="label">Select Rock tree:</label>
+                  </div>
+                  <div class="field-body column is-6">
+                    <div class="field is-narrow">
+                      <div class="control">
+                        <div class="select">
+                          <select name="rock_tree">
+                            <option>All</option>
+
+                            <?lua
+                            local lr = require "luarocks"
+
+                            list_of_rock_trees = lr.list_rock_trees()
+
+                            for i, tree in ipairs(list_of_rock_trees) do
+                            ?>
+                            
+                            <option value="<?lua= tree['root'] ?>"> <?lua print(tree["name"]) ?> </option>
+
+                            <?lua
+                            end
+                            ?>
+
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                        
+                <!-- search bar -->
+                <div class="search-bar column is-8">
+                  
+                    <div class="field has-addons">
+                      <div class="control is-expanded">
+                        <input class="input has-text-centered" type="search" placeholder="rock name to search" name="query">
+                      </div>
+                      <div class="control">
+                        <button class="button" id="search" type="submit" name="search" value="submit" >search</button>
+                      </div>
+                    </div>
+                </div>
+                <!-- search bar end -->
+
+                <div class="column is-12 has-text-centered">
+                  <h5 class="title is-5"> Current Rock tree: <?lua print(cgilua.POST.rock_tree) ?> </h5>
+                </div>
+
+              </div>
+            </form>
+          </div>
+
 
            <?lua
-
-          list_of_rocks = nil
-          lr = nil
-          collectgarbage()
-
-
-          local lr = require "luarocks"
-
+           
           --local pl = require "pl.pretty"
           --print(pl.write(lr.list()))
 
@@ -71,7 +122,20 @@
           file = io.open("list.lp", "a")
           file:write("e")
 
-          local list_of_rocks = lr.list()
+          local list_of_rocks = nil
+          local query = nil
+          local rock_tree = nil
+
+          if cgilua.POST.query then
+            query = cgilua.POST.query
+          end
+          if cgilua.POST.rock_tree then
+            rock_tree = cgilua.POST.rock_tree
+          end
+
+          list_of_rocks = lr.list(query, nil, nil, rock_tree)
+
+
           count_of_rocks = 0
           for i, data_table in ipairs(list_of_rocks) do
           --list_of_rocks = lr.list()
@@ -85,9 +149,16 @@
             <!-- list item -->
             <div class="box" id="box<?lua= i ?>">
               <!-- box header -->
-              <div class="box-header">
-                <h4 class="title is-4"> <?lua print(data_table[1]) ?> </h4>
-                <small> <?lua print(data_table[2]) ?> </small>
+              <div class="box-header columns is-multiline">
+                <div class="column is-2">
+                  <h4 class="title is-4"> <?lua print(data_table[1]) ?> </h4>
+                </div>
+                <div class="column is-10">
+                  <small> <?lua print(data_table[2]) ?> </small>
+                </div>
+                <div class="column is-10">
+                  <small> <?lua print(data_table[4]) ?> </small>
+                </div>
                 <br>
                 <small> <?lua if show["summary"] then print(show["summary"]) end ?> </small>
               </div>
@@ -172,4 +243,4 @@ for (x = 1; x-1 <= <?lua= count_of_rocks ?> ; x++) {
 list_of_rocks = nil
 lr = nil
 collectgarbage()
-?>eeeeeeeeeeeeeeeeeeeeeeeeeee
+?>
