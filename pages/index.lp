@@ -75,7 +75,10 @@
               <p> <?lua print(tree["root"]) ?> </p>
             </div>
             <div class="has-text column is-6">
-              <a class="button" id="select">Select</a>
+              <!--<a class="button" id="open">Open</a>-->
+              <form action="open_rock_tree.lp" method="post">
+                <button class="button" id="open" type="submit" name="rock_tree_dir" value="<?lua= tree['root'] ?>" >Open location</button>
+              </form>
             </div>
           </div>
 
