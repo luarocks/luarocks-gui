@@ -74,7 +74,8 @@
           count_of_rocks = 0
           for i, data_table in ipairs(list_of_rocks) do
           --list_of_rocks = lr.list()
-          if count_of_rocks >6 then break end
+          --if count_of_rocks >6 then break end
+          if data_table[1] == "luarocks-gui" then goto continue end
           local show = lr.show(data_table[1])
           homepage, doc_dir, files = lr.doc(data_table[1])
           count_of_rocks = count_of_rocks + 1
@@ -122,6 +123,7 @@
 
 
           <?lua
+          ::continue::
           end
           ?>
 
@@ -147,7 +149,7 @@
 </body>
 
 <script>
-for (x = 1; x <= <?lua= count_of_rocks ?> ; x++) {
+for (x = 1; x-1 <= <?lua= count_of_rocks ?> ; x++) {
   new Vue({
   el: '#box'+x,
   data: {
@@ -169,4 +171,4 @@ for (x = 1; x <= <?lua= count_of_rocks ?> ; x++) {
 list_of_rocks = nil
 lr = nil
 collectgarbage()
-?>
+?>eeeeeeeee
