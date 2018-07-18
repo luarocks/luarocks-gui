@@ -74,7 +74,7 @@
           if cgilua.POST.query then
             sc = lr.search(cgilua.POST.query)
           else
-            sc = lr.search("test rock")
+            sc = lr.search("a very complicated query, because this cannot take a nil value yet")
           end
 
           for item, item_versions in pairs(sc.sources) do
@@ -87,7 +87,7 @@
               <div class="column is-2">
                 <h4 class="title is-4"><?lua print(item) ?></h4>
               </div>
-              <div class="column is-2">
+              <div class="column is-2 is-offset-8">
                 <a class="button" id="view_on" target="_blank" href="https://luarocks.org/search?q=<?lua= item ?>">View on luaRocks.org</a>
               </div>
             </div>
@@ -96,13 +96,13 @@
             <div class="box-content">
                 <!-- version select form -->
                 <form action="install.lp" method="post">
-                  <div class="has-text form">
+                  <div class="columns is-multiline">
                   
-                    <div class="field is-horizontal">
-                      <div class="field-label">
+                    <div class="field is-vcentered columns column is-3">
+                      <div class="field-label column is-6">
                         <label class="label">Select version:</label>
                       </div>
-                      <div class="field-body">
+                      <div class="field-body column is-6">
                         <div class="field is-narrow">
                           <div class="control">
                             <div class="select">
@@ -126,15 +126,40 @@
                       </div>
                     </div>
 
-                    <div class="field is-horizontal">
-                      <div class="field-label">
-                        <!-- Left empty for spacing -->
+                    <div class="field is-vcentered columns column is-3">
+                      <div class="field-label column is-6">
+                        <label class="label">Select Rock tree:</label>
                       </div>
-                      <div class="field-body">
-                        <div class="field">
+                      <div class="field-body column is-6">
+                        <div class="field is-narrow">
                           <div class="control">
-                            <button class="button" id="install" type="submit" name="rock_name" value="<?lua= item ?>" >Install</button>
+                            <div class="select">
+                              <select name="rock_tree">
+                                <option>System (Default)</option>
+
+                                <?lua
+                                list_of_rock_trees = lr.list_rock_trees()
+
+                                for i, tree in ipairs(list_of_rock_trees) do
+                                ?>
+                                
+                                <option value="<?lua= tree['root'] ?>"> <?lua print(tree["name"]) ?> </option>
+
+                                <?lua
+                                end
+                                ?>
+
+                              </select>
+                            </div>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="field column is-4 is-offset-1">
+                      <div class="field">
+                        <div class="control">
+                          <button class="button" id="install" type="submit" name="rock_name" value="<?lua= item ?>" >Install</button>
                         </div>
                       </div>
                     </div>
