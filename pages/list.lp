@@ -68,7 +68,7 @@
                           <select name="rock_tree">
                             <option>All</option>
 
-                            <?lua
+                            <?lua 
                             local lr = require "luarocks"
 
                             list_of_rock_trees = lr.list_rock_trees()
@@ -113,12 +113,6 @@
 
 
            <?lua
-           
-          --local pl = require "pl.pretty"
-          --print(pl.write(lr.list()))
-
-
-          --print(io.open("list.lp", "a"))
           file = io.open("list.lp", "a")
           file:write("e")
 
@@ -129,8 +123,10 @@
           if cgilua.POST.query then
             query = cgilua.POST.query
           end
-          if cgilua.POST.rock_tree then
+          if cgilua.POST.rock_tree ~= "All" then
             rock_tree = cgilua.POST.rock_tree
+          else
+            rock_tree = nil
           end
 
           list_of_rocks = lr.list(query, nil, nil, rock_tree)
@@ -138,8 +134,6 @@
 
           count_of_rocks = 0
           for i, data_table in ipairs(list_of_rocks) do
-          --list_of_rocks = lr.list()
-          --if count_of_rocks >6 then break end
           if data_table[1] == "luarocks-gui" then goto continue end
           local show = lr.show(data_table[1])
           homepage, doc_dir, files = lr.doc(data_table[1])
@@ -238,9 +232,3 @@ for (x = 1; x-1 <= <?lua= count_of_rocks ?> ; x++) {
 });
 }
 </script>
-
-<?lua
-list_of_rocks = nil
-lr = nil
-collectgarbage()
-?>
