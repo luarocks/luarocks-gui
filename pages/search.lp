@@ -67,7 +67,7 @@
           </div>
           <!-- search bar end -->
 
-          <?lua 
+          <?lua
           local lr = require("luarocks")
 
           
@@ -107,7 +107,7 @@
                           <div class="control">
                             <div class="select">
                               <select name="version">
-                                <option>Select</option>
+                                <option value="latest">Latest (Default)</option>
 
                                 <?lua
                                 for version,_ in pairs(item_versions) do
@@ -135,7 +135,7 @@
                           <div class="control">
                             <div class="select">
                               <select name="rock_tree">
-                                <option>System (Default)</option>
+                                <option value="system">System (Default)</option>
 
                                 <?lua
                                 list_of_rock_trees = lr.list_rock_trees()

@@ -3,7 +3,15 @@
 
 <?lua 
 local lr = require("luarocks")
-lr.install(cgilua.POST.rock_name, cgilua.POST.version, cgilua.POST.rock_tree)
+
+local rock_tree = cgilua.POST.rock_tree
+local version = cgilua.POST.version
+
+if version == "latest" then
+	version = nil
+end
+
+lr.install(cgilua.POST.rock_name, version, rock_tree)
 ?>
 
 <head>
