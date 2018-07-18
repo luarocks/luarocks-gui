@@ -3,7 +3,7 @@
 
 <?lua 
 local lr = require("luarocks")
-lr.install(cgilua.POST.rock_name, cgilua.POST.version)
+lr.install(cgilua.POST.rock_name, cgilua.POST.version, cgilua.POST.rock_tree)
 ?>
 
 <head>
