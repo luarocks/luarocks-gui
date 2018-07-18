@@ -67,11 +67,11 @@
           </div>
           <!-- search bar end -->
 
-          <?lua
+          <?lua 
           local lr = require("luarocks")
 
           
-          if cgilua.POST.query then
+          if cgilua.POST.query and cgilua.POST.query ~= "" then
             sc = lr.search(cgilua.POST.query)
           else
             sc = lr.search("a very complicated query, because this cannot take a nil value yet")
