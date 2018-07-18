@@ -112,9 +112,9 @@
           </div>
 
 
-           <?lua
-          file = io.open("list.lp", "a")
-          file:write("e")
+          <?lua
+
+          os.execute("touch list.lp")
 
           local list_of_rocks = nil
           local query = nil
