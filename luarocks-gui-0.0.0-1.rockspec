@@ -12,6 +12,7 @@ dependencies = {
    "xavante",
    "wsapi-xavante",
    "cgilua",
+   "datafile",
 }
 
 source = {

@@ -16,20 +16,15 @@ function gui.command()
     -- (normally not necessary, but now LuaRocks already loaded LuaSocket)
     package.loaded["socket.http"] = nil
 
+    local datafile = require "datafile"
     local xavante = require "xavante"
+    local redirect = require "xavante.redirecthandler"
     local filehandler = require "xavante.filehandler"
     local cgiluahandler = require "xavante.cgiluahandler"
-    local redirect = require "xavante.redirecthandler"
-
-    --local datafile = require("luarocks_gui.gui")
-    --local datafile = require("datafile")
-
-    --local s = assert(datafile.path("gui/0.0.1-1/pages/index.lp", "r"))
-    --local s = assert(datafile.path("pages/index.lp", "r"))
 
     -- Define here where Xavante HTTP documents scripts are located
-    local webDir = "pages"
-
+    local path = datafile.path("pages/index.lp", "r")
+    local webDir = path:sub(1, -1 - #("/index.lp"))
 
     local simplerules = {
 
