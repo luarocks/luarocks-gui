@@ -178,6 +178,7 @@
                     <form action="remove.lp" method="post">
                       <input style="display:none;" name="version" id="version" value="<?lua= data_table[2] ?>">
                       <input style="display:none;" name="rock_tree" id="rock_tree" value="<?lua= data_table[4] ?>">
+                      <input style="display:none;" name="force_fast" id="force_fast" value="no">
                       <button class="button" id="remove" type="submit" name="rock_name" value="<?lua= data_table[1] ?>" >Remove</button>
                     </form>
                   </div>
