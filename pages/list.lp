@@ -135,7 +135,11 @@
           count_of_rocks = 0
           for i, data_table in ipairs(list_of_rocks) do
           if data_table[1] == "luarocks-gui" then goto continue end
-          local show = lr.show(data_table[1])
+
+          local lib_start, lib_end = string.find(data_table[4] , "lib")
+          local rock_tree = string.sub(data_table[4], 1, lib_start-1)
+
+          local show = lr.show(data_table[1], data_table[2], rocktree)
           homepage, doc_dir, files = lr.doc(data_table[1])
           count_of_rocks = count_of_rocks + 1
           ?>
