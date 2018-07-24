@@ -53,7 +53,8 @@
   <!-- main page content -->
   <div class="main-content">
     <div class="container">
-      <div class="columns">
+      <div class="columns column is-multiline">
+        
         <div class=" box columns column is-multiline is-12 is-vcentered">
           <!-- list of details -->
           
@@ -67,7 +68,7 @@
               <p> <strong> Made by: </strong> </p>
             </div>
             <div class="has-text column is-6">
-              <a href="https://github.com/luarocks/">luarocks</a>
+              <a href="https://github.com/luarocks/">LuaRocks</a>
             </div>
             <div class="box-content-text has-text-right column is-6">
               <p> <strong> License: </strong> </p>
@@ -79,6 +80,27 @@
 
           <!-- list of details end -->
         </div>
+
+        <div class=" box columns column is-multiline is-12 is-vcentered">
+          <!-- list of details -->
+          
+            <div class="box-content-text has-text-right column is-6">
+              <p> <strong> Want to contribute? </strong> </p>
+            </div>
+            <div class="has-text column is-6">
+              <a href="https://github.com/jiteshpabla/luarocks-gui">Click here</a>
+            </div>
+            <div class="box-content-text has-text-right column is-6">
+              <p> <strong> Found any bugs? </strong> </p>
+            </div>
+            <div class="has-text column is-6">
+              <a href="https://github.com/jiteshpabla/luarocks-gui/issues">Report here</a>
+            </div>
+          
+
+          <!-- list of details end -->
+        </div>
+
       </div>
     </div>
   </div>
