@@ -210,12 +210,20 @@
 
   <!-- footer -->
   <div class="footer">
+    <small>
     <div class="container">
       <div class="has-text-centered">
-        <p>do we even need a footer?</p>
-        <a href="https://luarocks.org">LuaRocks website</a>
+        <a href="https://luarocks.org">LuaRocks</a>
+      </div>
+      <div class="has-text-centered">
+        <a href="https://github.com/jiteshpabla/luarocks-gui">Source</a>
+        &#9679;
+        <a href="https://github.com/jiteshpabla/luarocks-gui/issues">Issues</a>
+        &#9679;
+        <a href="https://gitter.im/luarocks/luarocks">Gitter-chat</a>
       </div>
     </div>
+    </small>
   </div>
   <!-- footer end -->
 </body>
