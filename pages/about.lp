@@ -24,7 +24,6 @@
         </div>
         <div class="navbar-end">
           <a class="navbar-item is-active" href="about.lp">About</a>
-          <a class="navbar-item" href="help.lp">Help</a>
         </div>
       </div>
     </div>

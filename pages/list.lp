@@ -26,7 +26,6 @@
         </div>
         <div class="navbar-end">
           <a class="navbar-item" href="about.lp">About</a>
-          <a class="navbar-item" href="help.lp">Help</a>
         </div>
       </div>
     </div>
