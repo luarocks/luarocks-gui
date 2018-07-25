@@ -67,14 +67,14 @@
                           <select name="rock_tree">
                             <option>All</option>
 
-                            <?lua 
+                            <?lua
                             local lr = require "luarocks"
 
                             list_of_rock_trees = lr.list_rock_trees()
 
                             for i, tree in ipairs(list_of_rock_trees) do
                             ?>
-                            
+
                             <option value="<?lua= tree['root'] ?>"> <?lua print(tree["name"]) ?> </option>
 
                             <?lua
@@ -87,10 +87,10 @@
                     </div>
                   </div>
                 </div>
-                        
+
                 <!-- search bar -->
                 <div class="search-bar column is-8">
-                  
+
                     <div class="field has-addons">
                       <div class="control is-expanded">
                         <input class="input has-text-centered" type="search" placeholder="rock name to search" name="query">
@@ -133,7 +133,6 @@
 
           count_of_rocks = 0
           for i, data_table in ipairs(list_of_rocks) do
-          if data_table[1] == "luarocks-gui" then goto continue end
 
           local lib_start, lib_end = string.find(data_table[4] , "lib")
           local rock_tree = string.sub(data_table[4], 1, lib_start-1)
@@ -194,7 +193,6 @@
 
 
           <?lua
-          ::continue::
           end
           ?>
 
