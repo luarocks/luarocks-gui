@@ -69,7 +69,7 @@
           <?lua
           local lr = require("luarocks")
 
-          
+
           if cgilua.POST.query and cgilua.POST.query ~= "" then
             sc = lr.search(cgilua.POST.query)
           else
@@ -96,7 +96,7 @@
                 <!-- version select form -->
                 <form action="install.lp" method="post">
                   <div class="columns is-multiline">
-                  
+
                     <div class="field is-vcentered columns column is-3">
                       <div class="field-label column is-6">
                         <label class="label">Select version:</label>
@@ -109,9 +109,14 @@
                                 <option value="latest">Latest (Default)</option>
 
                                 <?lua
-                                for version,_ in pairs(item_versions) do
+                                local sorted = {}
+                                for version, _ in pairs(item_versions) do
+                                  table.insert(sorted, version)
+                                end
+                                table.sort(sorted, function(a,b) return a>b end)
+                                for _, version in ipairs(sorted) do
                                 ?>
-                                
+
                                 <option> <?lua print(version) ?> </option>
 
                                 <?lua
@@ -141,7 +146,7 @@
 
                                 for i, tree in ipairs(list_of_rock_trees) do
                                 ?>
-                                
+
                                 <option value="<?lua= tree['root'] ?>"> <?lua print(tree["name"]) ?> </option>
 
                                 <?lua
@@ -163,8 +168,8 @@
                       </div>
                     </div>
 
-                    
-      
+
+
                   </div>
                 </form>
                 <!-- version select form end -->
