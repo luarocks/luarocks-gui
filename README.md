@@ -55,5 +55,18 @@ You can:
 #### about page
 This page shows you the informantion about luarocks-gui.
 
+
+## Dependencies
+
+This rock depends on:
+- [xavante](https://keplerproject.github.io/xavante/)
+- [wsapi-xavante](https://keplerproject.github.io/xavante/)
+- [cgilua](https://keplerproject.github.io/cgilua/)
+- [datafile](https://github.com/hishamhm/datafile)
+
+This project also uses:
+- [Bulma](https://github.com/jgthms/bulma)
+- [Vue](https://github.com/vuejs/vue)
+
 --------------------------------------------------------------------
 Feedback, pull requests, criticism, contributions, etc. are welcome!
