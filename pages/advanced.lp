@@ -140,13 +140,8 @@
                     <div class="field-body">
                       <div class="field">
                         <div class="control">
-                          <input class="input is-danger" type="text" placeholder="eg. home/user/example.rockspec" name="location">
+                          <input class="input" type="text" placeholder="eg. home/user/example.rockspec" name="location">
                         </div>
-                        <!--
-                        <p class="help is-danger">
-                          This field is required
-                        </p>
-                        -->
                       </div>
                     </div>
                   </div>

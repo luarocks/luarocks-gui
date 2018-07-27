@@ -88,11 +88,7 @@ print(ok, err)
 </head>
 
 <body>
-
-<form action="advanced.lp" method="get">
-<button class="button" type="submit" name="rock_name" value="wow" >ok, go back</button>
-</form>
-
+  <form action="advanced.lp" method="get">
+    <button class="button" type="submit">ok, go back</button>
+  </form>
 </body>
-
-</html>

@@ -132,12 +132,12 @@
           count_of_rocks = 0
           for i, data_table in ipairs(list_of_rocks) do
 
-          local lib_start, lib_end = string.find(data_table[4] , "lib")
-          local rock_tree = string.sub(data_table[4], 1, lib_start-1)
+            local lib_start, lib_end = string.find(data_table[4] , "lib")
+            local rock_tree = string.sub(data_table[4], 1, lib_start-1)
 
-          local show = lr.show(data_table[1], data_table[2], rocktree)
-          homepage, doc_dir, files = lr.doc(data_table[1])
-          count_of_rocks = count_of_rocks + 1
+            local show = lr.show(data_table[1], data_table[2], rocktree)
+            homepage, doc_dir, files = lr.doc(data_table[1])
+            count_of_rocks = count_of_rocks + 1
           ?>
 
             <!-- list item -->
@@ -162,9 +162,6 @@
                 <div class="has-text columns">
                   <div class="column is-1">
                     <a class="button" id="details" v-on:click="is_active = !is_active">Details</a>
-                    <!--<a class="button" id="docs">Documentation</a>-->
-                    <!--<a class="button" id="remove" v-on:click="remove_rock ('<lua data_table[1] ?>')" href="list.lp">Remove</a>-->
-                  </div>
                   <div class="column is-8">
                     <form action="open_doc_dir.lp" method="post">
                       <button class="button" id="docs" type="submit" name="doc_dir" value="<?lua= doc_dir ?>" >Documentation</button>
@@ -189,11 +186,9 @@
             </div>
             <!-- list item end -->
 
-
           <?lua
           end
           ?>
-
 
         </div>
 
@@ -229,14 +224,6 @@ for (x = 1; x-1 <= <?lua= count_of_rocks ?> ; x++) {
   el: '#box'+x,
   data: {
       is_active: false
-  },
-  methods: {
-    remove_rock : function (rock_name) {
-      // call lua
-      <?lua print("wouw") ?>
-      <?lua print(" ?> rock_name; <?lua ") ?>
-      console.log(rock_name);
-    }
   }
 });
 }
