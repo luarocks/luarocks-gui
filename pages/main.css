@@ -1,3 +1,9 @@
+/* import font */
+@font-face {
+    font-family: 'Fira Sans';
+    src: url("FiraSans-Regular.ttf") format('truetype');
+}
+
 /* basic formatting changes */
 body {
     font-family: 'Fira Sans', sans-serif;
