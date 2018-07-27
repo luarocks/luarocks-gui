@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <head>
   <title>LuaRocks GUI</title>
-  <!-- styles and fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
-  <link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+  <!-- styles -->
+  <link rel="stylesheet" href="bulma.min.css">
   <link rel="stylesheet" href="main.css">
   <link rel="stylesheet" href="index.css">
-  <!-- styles and fonts end -->
+  <!-- styles end -->
 </head>
 
 <body>
