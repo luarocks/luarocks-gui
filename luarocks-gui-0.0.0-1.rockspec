@@ -13,6 +13,7 @@ dependencies = {
    "wsapi-xavante",
    "cgilua",
    "datafile",
+   "luafilesystem",
 }
 
 source = {
