@@ -62,7 +62,7 @@
                 <h5 class="title is-5">Existing rockspec</h5>
               </div>
 
-              <form action="lint_and_new_version.lp" method="get">
+              <form action="lint_and_new_version.lp" method="post">
 
                 <div class="has-text form column is-12">
 
@@ -73,8 +73,13 @@
                     <div class="field-body">
                       <div class="field">
                         <p class="control is-expanded">
-                          <input class="input" type="text" name="rockspec_name" placeholder="eg. example-0.0.0-1.rockspec || currently works only in the same directory">
+                          <input class="input" type="text" name="rockspec_name" placeholder="eg. dir1/dir2/example-0.0.0-1.rockspec">
                         </p>
+                        <?lua
+                        lfs = require("lfs")
+                        lfs.chdir("../../../../../..")
+                        ?>
+                        <p class="help">Please proved the path relative to: <?lua print(lfs.currentdir()) ?></p>
                       </div>
                     </div>
                   </div>
@@ -140,8 +145,9 @@
                     <div class="field-body">
                       <div class="field">
                         <div class="control">
-                          <input class="input" type="text" placeholder="eg. home/user/example.rockspec" name="location">
+                          <input class="input" type="text" placeholder="eg. dir1/dir2/example.rockspec" name="location">
                         </div>
+                        <p class="help">Please proved the path relative to: <?lua print(lfs.currentdir()) ?></p>
                       </div>
                     </div>
                   </div>
