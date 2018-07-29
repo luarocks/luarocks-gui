@@ -4,7 +4,7 @@
   <!-- styles -->
   <link rel="stylesheet" href="bulma.min.css">
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="list.css">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   <!-- styles end -->
 </head>
@@ -162,6 +162,7 @@
                 <div class="has-text columns">
                   <div class="column is-1">
                     <a class="button" id="details" v-on:click="is_active = !is_active">Details</a>
+                  </div>
                   <div class="column is-8">
                     <form action="open_doc_dir.lp" method="post">
                       <button class="button" id="docs" type="submit" name="doc_dir" value="<?lua= doc_dir ?>" >Documentation</button>

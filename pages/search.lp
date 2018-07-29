@@ -4,7 +4,7 @@
   <!-- styles -->
   <link rel="stylesheet" href="bulma.min.css">
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="list.css">
   <!-- styles end -->
 </head>
 
