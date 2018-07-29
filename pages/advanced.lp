@@ -123,20 +123,6 @@
               <!-- rockspec form -->
               <form action="new_rockspec.lp" method="post">
                 <div class="has-text form">
-                  
-                  
-                  <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                      <label class="label">Name (rock)</label>
-                    </div>
-                    <div class="field-body">
-                      <div class="field">
-                        <p class="control is-expanded">
-                          <input class="input" type="text" placeholder="eg. rock_name" name="name">
-                        </p>
-                      </div>
-                    </div>
-                  </div>
 
                   <div class="field is-horizontal">
                     <div class="field-label is-normal">
