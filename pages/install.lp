@@ -116,7 +116,7 @@
           ?>
 
           <div class="column is-2">
-            <form action="list.lp" method="get">
+            <form action="search.lp" method="get">
               <button class="button" type="submit">Go back</button>
             </form>
           </div>
