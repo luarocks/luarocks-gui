@@ -52,6 +52,7 @@
         <div class=" box columns column is-multiline is-12">
 
           <?lua
+            arg = {}
           local lr = require("luarocks")
           
           local rock_tree = cgilua.POST.rock_tree
@@ -91,29 +92,20 @@
           </div>
 
           <?lua
-          end
+          end 
 
-          ok, err = lr.install(cgilua.POST.rock_name, version, rock_tree)
-
-          if ok == cgilua.POST.rock_name and err == cgilua.POST.version then
-          ?>
-            <div class="column is-12">
-              <p>
-                <?lua print(cgilua.POST.rock_name..": "..cgilua.POST.version) ?> is installed!
-              </p>
-            </div>
-          <?lua
+          if version == nil then
+            os.execute("luarocks install ".."--keep "..cgilua.POST.rock_name.." --tree="..rock_tree)
           else
-          ?>
-            <div class="column is-12">
-              <p>
-                <?lua print("Error :  "..err) ?>
-              </p>
-            </div>
-
-          <?lua 
+            os.execute("luarocks install ".."--keep "..cgilua.POST.rock_name.." "..version.." --tree="..rock_tree)
           end
+
           ?>
+          <div class="column is-12">
+            <p>
+              Please read the messages in the terminal to confirm the installation of <?lua print(cgilua.POST.rock_name) ?> 
+            </p>
+          </div>
 
           <div class="column is-2">
             <form action="search.lp" method="get">
