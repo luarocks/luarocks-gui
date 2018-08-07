@@ -128,30 +128,33 @@
 
           list_of_rocks = lr.list(query, nil, nil, rock_tree)
 
+          local count_of_rocks = 0
+          for rock_name, data_table in pairs(list_of_rocks) do
+            for rock_version, location_table in pairs(data_table) do
+              for _, location in pairs(location_table) do
+                local rock_location = location.repo
 
-          count_of_rocks = 0
-          for i, data_table in ipairs(list_of_rocks) do
+                local lib_start, lib_end = string.find(rock_location , "lib")
+                local rock_tree = string.sub(rock_location, 1, lib_start-1)
 
-            local lib_start, lib_end = string.find(data_table[4] , "lib")
-            local rock_tree = string.sub(data_table[4], 1, lib_start-1)
-
-            local show = lr.show(data_table[1], data_table[2], rocktree)
-            homepage, doc_dir, files = lr.doc(data_table[1])
-            count_of_rocks = count_of_rocks + 1
+                local show = lr.show(rock_name, rock_version, rocktree)
+                local doc_dir = lr.doc(rock_name, rock_version, rocktree)
+                local homepage = lr.homepage(rock_name, rock_version, rocktree)
+                count_of_rocks = count_of_rocks + 1
           ?>
 
             <!-- list item -->
-            <div class="box" id="box<?lua= i ?>">
+            <div class="box" id="box<?lua= count_of_rocks ?>">
               <!-- box header -->
               <div class="box-header columns is-multiline">
                 <div class="column is-2">
-                  <h4 class="title is-4"> <?lua print(data_table[1]) ?> </h4>
+                  <h4 class="title is-4"> <?lua print(rock_name) ?> </h4>
                 </div>
                 <div class="column is-10">
-                  <small> <?lua print(data_table[2]) ?> </small>
+                  <small> <?lua print(rock_version) ?> </small>
                 </div>
                 <div class="column is-10">
-                  <small> <?lua print(data_table[4]) ?> </small>
+                  <small> <?lua print(rock_location) ?> </small>
                 </div>
                 <br>
                 <small> <?lua if show["summary"] then print(show["summary"]) end ?> </small>
@@ -170,10 +173,10 @@
                   </div>
                   <div class="column is-2">
                     <form action="remove.lp" method="post">
-                      <input style="display:none;" name="version" id="version" value="<?lua= data_table[2] ?>">
-                      <input style="display:none;" name="rock_tree" id="rock_tree" value="<?lua= data_table[4] ?>">
+                      <input style="display:none;" name="version" id="version" value="<?lua= rock_version ?>">
+                      <input style="display:none;" name="rock_tree" id="rock_tree" value="<?lua= rock_location ?>">
                       <input style="display:none;" name="force_fast" id="force_fast" value="no">
-                      <button class="button" id="remove" type="submit" name="rock_name" value="<?lua= data_table[1] ?>" >Remove</button>
+                      <button class="button" id="remove" type="submit" name="rock_name" value="<?lua= rock_name ?>" >Remove</button>
                     </form>
                   </div>
 
@@ -188,6 +191,8 @@
             <!-- list item end -->
 
           <?lua
+              end
+            end
           end
           ?>
 
