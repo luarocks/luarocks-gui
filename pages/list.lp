@@ -137,9 +137,9 @@
                 local lib_start, lib_end = string.find(rock_location , "lib")
                 local rock_tree = string.sub(rock_location, 1, lib_start-1)
 
-                local show = lr.show(rock_name, rock_version, rocktree)
-                local doc_dir = lr.doc(rock_name, rock_version, rocktree)
-                local homepage = lr.homepage(rock_name, rock_version, rocktree)
+                local show = lr.show(rock_name, rock_version, rock_tree)
+                local doc_dir = lr.doc(rock_name, rock_version, rock_tree)
+                local homepage = lr.homepage(rock_name, rock_version, rock_tree)
                 count_of_rocks = count_of_rocks + 1
           ?>
 
