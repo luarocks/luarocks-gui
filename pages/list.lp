@@ -138,7 +138,7 @@
                 local rock_tree = string.sub(rock_location, 1, lib_start-1)
 
                 local show = lr.show(rock_name, rock_version, rock_tree)
-                local doc_dir = lr.doc(rock_name, rock_version, rock_tree)
+                local doc_dir, doc_file = lr.doc(rock_name, rock_version, rock_tree)
                 local homepage = lr.homepage(rock_name, rock_version, rock_tree)
                 count_of_rocks = count_of_rocks + 1
           ?>
@@ -168,6 +168,7 @@
                   </div>
                   <div class="column is-8">
                     <form action="open_doc_dir.lp" method="post">
+                      <input style="display:none;" name="doc_file" id="doc_file" value="<?lua= doc_file ?>">
                       <button class="button" id="docs" type="submit" name="doc_dir" value="<?lua= doc_dir ?>" >Documentation</button>
                     </form>
                   </div>
