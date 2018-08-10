@@ -55,9 +55,12 @@
 
           local lr = require("luarocks")
           
+          -- To extract rock-tree location from given rock location
           local lib_start, lib_end = string.find(cgilua.POST.rock_tree , "lib")
           local rock_tree = string.sub(cgilua.POST.rock_tree, 1, lib_start-1)
 
+          -- 'check' will return true if removal successful
+          -- 'err' will either be a string containing an error message, or a table containing rocks dependent on the rock to be removed
           local check, err = nil, nil
           if cgilua.POST.force_fast == "no" then
             check, err = lr.remove(cgilua.POST.rock_name, cgilua.POST.version, rock_tree)
@@ -65,6 +68,7 @@
             check, err = lr.remove(cgilua.POST.rock_name, cgilua.POST.version, rock_tree, "force-fast")
           end
           
+          -- To check for any dependents on the rock to be removed
           if type(err) == "table" and err[1] then
           ?>
 
@@ -93,7 +97,7 @@
           </div>
 
           <div class="column is-2">
-            <form action="remove.lp" method="post">
+            <form action="remove.lp" id="force_removal" method="post">
               <input style="display:none;" name="version" id="version" value="<?lua= cgilua.POST.version ?>">
               <input style="display:none;" name="rock_tree" id="rock_tree" value="<?lua= cgilua.POST.rock_tree ?>">
               <input style="display:none;" name="rock_name" id="rock_name" value="<?lua= cgilua.POST.rock_name ?>">

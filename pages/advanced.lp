@@ -77,6 +77,7 @@
                         </p>
                         <?lua
                         lfs = require("lfs")
+                        -- Navigate to the root directory of the current rock-tree
                         lfs.chdir("../../../../../..")
                         ?>
                         <p class="help">Please proved the path relative to: <?lua print(lfs.currentdir()) ?></p>

@@ -72,6 +72,7 @@
           if cgilua.POST.query and cgilua.POST.query ~= "" then
             sc = lr.search(cgilua.POST.query)
           else
+            -- An arbitrary query to return an empty list incase of an empty query
             sc = lr.search("a very complicated query, because this cannot take a nil value yet")
           end
 

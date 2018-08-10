@@ -54,6 +54,7 @@
           <div class="column is-12">
             <?lua 
             lfs = require("lfs")
+            -- Navigate to the root directory of the current rock-tree
             lfs.chdir("../../../../../..")
 
             local lr = require("luarocks")

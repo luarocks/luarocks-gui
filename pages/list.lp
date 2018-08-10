@@ -51,7 +51,7 @@
         <div class="column is-12">
 
           <div class="box">
-            <form action="list.lp" method="post">
+            <form action="list.lp" id="query_form" method="post">
               <div class="columns is-multiline">
 
                 <div class="field is-vcentered columns column is-4">
@@ -117,6 +117,7 @@
           local query = nil
           local rock_tree = nil
 
+          -- Initialise query and rock_tree to filter the results based on on the values given in the form (id = query_form).
           if cgilua.POST.query then
             query = cgilua.POST.query
           end
@@ -169,7 +170,7 @@
                   <div class="column is-8">
                     <form action="open_doc_dir.lp" method="post">
                       <input style="display:none;" name="doc_file" id="doc_file" value="<?lua= doc_file ?>">
-                      <button class="button" id="docs" type="submit" name="doc_dir" value="<?lua= doc_dir ?>" >Documentation</button>
+                      <button class="button" id="doc_dir" type="submit" name="doc_dir" value="<?lua= doc_dir ?>" >Documentation</button>
                     </form>
                   </div>
                   <div class="column is-2">
@@ -226,6 +227,7 @@
 </body>
 
 <script>
+// loop to initialize a new Vue instance for every rock in the list
 for (x = 1; x-1 <= <?lua= count_of_rocks ?> ; x++) {
   new Vue({
   el: '#box'+x,

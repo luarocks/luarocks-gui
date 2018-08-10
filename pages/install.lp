@@ -64,6 +64,7 @@
           
           missing_deps, err = lr.check_missing_dependencies(cgilua.POST.rock_name, version, rock_tree)
           
+          -- To check if any dependencies need to be installed along with the requested rock
           if type(missing_deps) == "table" and missing_deps[1] then
           ?>
           
@@ -94,6 +95,8 @@
           <?lua
           end 
 
+          -- Use the LuaRocks CLI to install the requested rock
+          -- by deafult use 'keep' to not unistall any other existing versions
           if version == nil then
             os.execute("luarocks install ".."--keep "..cgilua.POST.rock_name.." --tree="..rock_tree)
           else

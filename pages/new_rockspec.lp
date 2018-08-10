@@ -92,39 +92,14 @@ end
             <?lua 
 
             local lfs = require("lfs")
+            -- Navigate to the root directory of the current rock-tree
             lfs.chdir("../../../../../..")
+            -- Navigate to the user specified directory relative to the root directory of the current rock-tree
             lfs.chdir(tostring(cgilua.POST.location))
 
             local lr = require("luarocks")
 
-            local name = nil
-            local version = nil
             local table = {}
-
-            --[[ the if statement do not work
-            if cgilua.POST.name then
-              name = cgilua.POST.name
-            elseif cgilua.POST.location then
-              table["location"] = tostring(cgilua.POST.location)
-            elseif cgilua.POST.output then
-              table["output"] = tostring(cgilua.POST.output)
-            elseif cgilua.POST.license then
-              table["license"] = tostring(cgilua.POST.license)
-            elseif cgilua.POST.summary then
-              table["summary"] = tostring(cgilua.POST.summary)
-            elseif cgilua.POST.description then
-              table["detailed"] = tostring(cgilua.POST.description)
-            elseif cgilua.POST.homepage then
-              table["homepage"] = tostring(cgilua.POST.homepage)
-            elseif cgilua.POST.rockspec_format then
-              table["rockspec_format"] = tostring(cgilua.POST.rockspec_format)
-            elseif cgilua.POST.c_libraries then
-              table["lib"] = tostring(cgilua.POST.c_libraries)
-            end
-            --]]
-
-            --name = cgilua.POST.name
-            --version = cgilua.POST.version
 
             table["output"] = tostring(cgilua.POST.output)
             table["license"] = tostring(cgilua.POST.license)
