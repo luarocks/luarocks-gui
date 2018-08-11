@@ -52,7 +52,6 @@
         <div class=" box columns column is-multiline is-12">
 
           <?lua
-            arg = {}
           local lr = require("luarocks")
           
           local rock_tree = cgilua.POST.rock_tree
