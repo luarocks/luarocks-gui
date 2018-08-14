@@ -2,18 +2,14 @@
 
 LuaRocks is a package manager for Lua. This project is a web-browser based GUI of LuaRocks that allows users to search for rocks, list installed rocks, install and remove them, view rock details, etc. It uses the LuaRocks API for interfacing with the LuaRocks back-end.
 
-**NOTE:** This project uses the [luarocks-api](https://github.com/luarocks/luarocks/tree/luarocks-api) branch of LuaRocks. So, you need to install that branch in order to run luarocks-gui.\
-Keep in mind that this branch is still under development, so if you come across any API issues then please report them [here](https://github.com/luarocks/luarocks/issues).
-
 ## Installation
-Just install using LuaRocks, by running this command:
-```
-luarocks install luarocks-gui
-```
-Or download/clone this repository and run this in the luarocks-gui directory:
-```
-luarocks build
-```
+
+1. Install the `luarocks-api` branch. Follow [these](https://github.com/luarocks/luarocks-gui/wiki/Installation-instructions#installing-the-luarocks-api-branch) instructions.
+2. Install `luarock-gui` by following [these](https://github.com/luarocks/luarocks-gui/wiki/Installation-instructions#installing-luarocks-gui) instructions.
+
+**NOTE:** This project uses the [luarocks-api](https://github.com/luarocks/luarocks/tree/luarocks-api) branch of LuaRocks. So, you need to install that branch in order to run luarocks-gui.\
+Keep in mind that this branch is still under development, so if you come across any API issues then please report them [here](https://github.com/luarocks/luarocks/issues).\
+This is temporary until the the API gets merged into the main branch of LuaRocks.
 
 ## Usage
 
